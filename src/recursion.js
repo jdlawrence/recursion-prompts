@@ -17,18 +17,21 @@ var factorial = function (n) {
   }
 };
 
-console.log('factorial', factorial(5));
+// console.log('factorial', factorial(5));
 // 2. Compute the sum of an array of integers.
 // sum([1,2,3,4,5,6]); // 21
-var sum = function (array, sumSoFar) {
-  sumSoFar = sumSoFar || 0;
+var sum = function (array) {
   if (array.length === 0) {
-    return sumSoFar;
+    return 0;
   }
-  return sum(array.slice(1), sumSoFar + array[0]);
+  if (array.length === 1) {
+    return array[0];
+  }
+  var addTwo = array[0] + array[1];
+  return sum([].concat([addTwo], array.slice(2)));
 };
 
-console.log('sum', sum([1, 2, 3, 4, 5, 6]));
+console.log(sum([1, 2, 3, 4, 5, 6]));
 
 // 3. Sum all numbers in an array containing nested arrays.
 // arraySum([1,[2,3],[[4]],5]); // 15
