@@ -102,18 +102,27 @@ var exponent = function (base, exp) {
   if (exp === 1) {
     return base;
   } else {
-    return base * exponent(base, exp - 1 );
+    return base * exponent(base, exp - 1);
   }
 };
 
-console.log(exponent(2, -2));
+// console.log(exponent(2, -2));
 // 8. Determine if a number is a power of two.
 // powerOfTwo(1); // true
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
 var powerOfTwo = function (n) {
+  if (n === 2 || n === 1) {
+    return true;
+  }
+  if (n % 2 === 1 || n === 0) {
+    return false;
+  }
+  if (n > 2) {
+    return powerOfTwo(n / 2);
+  }
 };
-
+console.log(powerOfTwo(1));
 // 9. Write a function that reverses a string.
 var reverse = function (string) {
 };
