@@ -7,6 +7,7 @@ module.exports = {
     ],
     'rules': {
       'no-mixed-operators': 0,
+      'consistent-return': 0,
       'no-var': 0,
       'vars-on-top': 0,
       'no-unused-vars': 0,
